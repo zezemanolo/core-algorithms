@@ -1,0 +1,13 @@
+{
+  "name": "core-algorithms",
+  "description": "Tests and implementations for algorithms commonly used in job interviews.",
+  "private": false,
+  "version": "0.0.0",
+  "devDependencies": {
+    "chai": "~1.8.0",
+    "mocha":"2.0.1"
+  },
+  "scripts": {
+    "test": "mocha ./spec/*.js"
+  }
+}
