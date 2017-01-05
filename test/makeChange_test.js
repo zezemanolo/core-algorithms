@@ -10,10 +10,7 @@ describe('makeChange()', function(){
   })
 
   it('returns an object with all coin types (quarters, dimes, nickels, and pennies)', function(){
-    const price = 1.00
-    const amountGiven = 1.00
-
-    const change = makeChange({price, amountGiven})
+    const change = makeChange({price: 100, amountGiven: 100})
     expect(change).to.be.an('object')
     expect(change).to.have.keys('quarters', 'dimes', 'nickels', 'pennies')
     expect(change).to.deep.equal({
@@ -25,10 +22,7 @@ describe('makeChange()', function(){
   })
 
   it('returns correct change', function(){
-    const price = 1.00
-    const amountGiven = 1.41
-
-    expect(makeChange({price, amountGiven})).to.deep.equal({
+    expect(makeChange({price: 100, amountGiven: 141})).to.deep.equal({
       quarters: 1,
       dimes: 1,
       nickels: 1,
@@ -37,14 +31,21 @@ describe('makeChange()', function(){
   })
 
   it('minimizes the number of coins given by using the most high-value coins', function(){
-    expect(makeChange({price: 1.00, amountGiven: 1.68})).to.deep.equal({
+    expect(makeChange({price: 100, amountGiven: 168})).to.deep.equal({
       quarters: 2,
       dimes: 1,
       nickels: 1,
       pennies: 3,
     })
 
-    expect(makeChange({price: 1.00, amountGiven: 1.71})).to.deep.equal({
+    expect(makeChange({price: 100, amountGiven: 169})).to.deep.equal({
+      quarters: 2,
+      dimes: 1,
+      nickels: 1,
+      pennies: 4,
+    })
+
+    expect(makeChange({price: 100, amountGiven: 170})).to.deep.equal({
       quarters: 2,
       dimes: 2,
       nickels: 0,
