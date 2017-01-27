@@ -13,7 +13,3 @@ export default function setUnion(firstArray, secondArray){
   console.log(resultsArray)
   return resultsArray
 }
-// // setUnion takes two arrays, filters for duplicates
-
-//pushes filtered values to new array
-//returns updated array
