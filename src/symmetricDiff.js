@@ -1,7 +1,6 @@
 export default function setSymmetricDifference(arr1, arr2) {
-
+  
   var resultsArray = []
-
   arr1.filter(function(n){
     if(arr2.indexOf(n) < 0){
       resultsArray.push(n)
@@ -13,4 +12,4 @@ export default function setSymmetricDifference(arr1, arr2) {
     }
   })
     return resultsArray
-   }
+}

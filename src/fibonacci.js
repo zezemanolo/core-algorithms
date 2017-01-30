@@ -11,6 +11,5 @@ export default function fibonacci(n){
     myArray.push(prevPosition)
     n--
   }
-  console.log(myArray)
   return myArray
 }
